@@ -7,10 +7,12 @@ use Illuminate\Http\Request;
 class LoginSectionController extends Controller
 {
     function indexLogin() {
-        return view("sesi/indexLogin");
+        return view("loginsesi/indexLogin");
     }
 
     function login() {
         return view("");
 }
 }
+
+
