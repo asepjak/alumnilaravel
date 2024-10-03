@@ -9,5 +9,5 @@ Route::get('/', function () {
 
 
 Route::get('/loginsesi', [LoginSectionController::class, 'indexLogin'] );
-
+Route::post('/loginsesi/login', [LoginSectionController::class, 'indexLogin'] );
 
