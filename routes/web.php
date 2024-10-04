@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\LoginSectionController;
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -11,6 +11,6 @@ Route::get('/', function () {
 // });
 
 
-Route::get('/login', [LoginSectionController::class, 'index'] );
-// Route::post('/loginsesi/login', [LoginSectionController::class, 'indexLogin'] );
-
+Route::get('/login', [LoginController::class, 'index'])->name('login');
+Route::post('/login', [LoginController::class, 'login']);
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
