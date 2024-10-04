@@ -1,5 +1,4 @@
 /* public/css/login.css */
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
 body {
@@ -9,23 +8,70 @@ body {
     align-items: center;
     background: linear-gradient(45deg, #3498db, #8e44ad);
     font-family: 'Poppins', sans-serif;
+    margin: 0; /* Menghapus margin default */
 }
 
 .container {
     width: 100%;
     max-width: 400px;
     padding: 20px;
-}
-
-.login-box {
     background-color: rgba(255, 255, 255, 0.9);
-    padding: 40px;
     border-radius: 10px;
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
 }
 
-/* ... (sisa CSS sama seperti sebelumnya) ... */
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 28px; /* Ukuran font judul */
+    color: #333; /* Warna teks judul */
+}
 
+div {
+    margin-bottom: 15px; /* Jarak antar elemen form */
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500; /* Memberikan ketebalan pada label */
+    color: #333; /* Warna label */
+}
+
+input[type="email"],
+input[type="password"],
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc; /* Border input */
+    border-radius: 5px; /* Sudut membulat */
+    box-sizing: border-box; /* Memastikan padding dihitung dalam lebar */
+    transition: border-color 0.3s; /* Efek transisi pada border */
+}
+
+input:focus,
+select:focus {
+    border-color: #3498db; /* Warna border saat fokus */
+    outline: none; /* Menghapus outline default */
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #3498db; /* Warna latar belakang tombol */
+    color: #fff; /* Warna teks tombol */
+    border: none;
+    border-radius: 5px; /* Sudut membulat pada tombol */
+    cursor: pointer; /* Menunjukkan pointer saat hover */
+    font-size: 16px; /* Ukuran font tombol */
+    transition: background-color 0.3s; /* Efek transisi pada warna tombol */
+}
+
+button:hover {
+    background-color: #2980b9; /* Warna tombol saat hover */
+}
+
+/* Menambahkan style untuk pesan error jika diperlukan */
 .invalid-feedback {
     color: #e74c3c;
     font-size: 0.875em;

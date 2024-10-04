@@ -27,7 +27,7 @@
 </html>
  -->
 
- <!DOCTYPE html>
+ <!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -38,8 +38,6 @@
     <link rel="stylesheet" href="asset{{('css/login.css')}}">
 </head>
 <body>
-<!-- resources/views/auth/login.blade.php -->
-
 @extends('layouts.app')
 
 @section('content')
@@ -93,5 +91,42 @@
 </div>
 @endsection
     <script src="asset{{('js/login.js')}}"></script>
+</body>
+</html> -->
+
+<!-- resources/views/auth/asep.blade.php -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+
+@extends ('layouts.app')
+    <div class="container">
+        <h1>Login</h1>
+        <form action="{{ url('/login') }}" method="post">
+            @csrf
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" name="email" required>
+            </div>
+            <div>
+                <label for="password">Password:</label>
+                <input type="password" name="password" required>
+            </div>
+            <div>
+                <label for="role">Role:</label>
+                <select name="role" required>
+                    <option value="alumni">Alumni</option>
+                    <option value="company">Company</option>
+                    <option value="admin">Admin</option>
+                </select>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+    </div>
 </body>
 </html>
