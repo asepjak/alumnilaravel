@@ -1,6 +1,11 @@
-@extends ('layout/aplikasi')
-
-@section('kontenLogin')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
 <div class="w-50 center border rounded px-3 py-3 mx-auto">
     <h1>Login</h1>
     <form action="/alumni/login" method="post">
@@ -18,4 +23,5 @@
         </div>
     </form>
 </div>
-@endsection
+</body>
+</html>

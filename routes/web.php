@@ -6,8 +6,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+// Route::get('/regist', function () {
+//     return view('loginsesi/asep');
+// });
 
 
-Route::get('/loginsesi', [LoginSectionController::class, 'indexLogin'] );
-Route::post('/loginsesi/login', [LoginSectionController::class, 'indexLogin'] );
+Route::get('/login', [LoginSectionController::class, 'index'] );
+// Route::post('/loginsesi/login', [LoginSectionController::class, 'indexLogin'] );
 
