@@ -21,20 +21,18 @@ class LoginController extends Controller
         $credentials = $request->validate([
             'email' => 'required|email',
             'password' => 'required',
-            'role' => 'required|in:alumni,company,admin', // Validasi role
         ]);
 
         // Cek apakah user valid dan login berhasil
-        if (Auth::attempt([
-            'email' => $credentials['email'],
-            'password' => $credentials['password'],
-            'role' => $credentials['role'], // Role juga harus diperiksa
-        ])) {
+        if (Auth::attempt($credentials)) {
             // Jika berhasil, regenerasi session
             $request->session()->regenerate();
 
+            // Simpan role ke dalam session (jika perlu)
+            $request->session()->put('role', Auth::user()->role);
+
             // Redirect ke halaman sesuai role
-            return redirect()->intended($this->redirectPath($request->role));
+            return redirect()->intended($this->redirectPath(Auth::user()->role));
         }
 
         // Jika gagal login, lemparkan exception dengan pesan error
