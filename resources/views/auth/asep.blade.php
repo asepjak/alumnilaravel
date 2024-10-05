@@ -107,7 +107,7 @@
 @extends ('layouts.app')
     <div class="container">
         <h1>Login</h1>
-        <form action="{{ url('/login') }}" method="post">
+        <form action="{{ route('login') }}" method="post">
             @csrf
             <div>
                 <label for="email">Email:</label>
@@ -116,14 +116,6 @@
             <div>
                 <label for="password">Password:</label>
                 <input type="password" name="password" required>
-            </div>
-            <div>
-                <label for="role">Role:</label>
-                <select name="role" required>
-                    <option value="alumni">Alumni</option>
-                    <option value="company">Company</option>
-                    <option value="admin">Admin</option>
-                </select>
             </div>
             <button type="submit">Login</button>
         </form>

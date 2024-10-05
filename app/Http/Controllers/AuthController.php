@@ -30,9 +30,6 @@ class AuthController extends Controller
 
             // Simpan role ke dalam session (jika perlu)
             $request->session()->put('role', Auth::user()->role);
-
-            // Redirect ke halaman sesuai role
-            return redirect()->intended($this->redirectPath(Auth::user()->role));
         }
 
         // Jika gagal login, lemparkan exception dengan pesan error
@@ -42,19 +39,6 @@ class AuthController extends Controller
     }
 
     // Method untuk mengarahkan user sesuai role
-    protected function redirectPath($role)
-    {
-        switch ($role) {
-            case 'alumni':
-                return '/alumni/dashboard';
-            case 'company':
-                return '/company/dashboard';
-            case 'admin':
-                return '/admin/dashboard';
-            default:
-                return '/home'; // Default redirect jika role tidak ditemukan
-        }
-    }
 
     // Method untuk logout
     public function logout(Request $request)
